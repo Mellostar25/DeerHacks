@@ -1,3 +1,4 @@
+'use client'
 import { FlashcardArray } from "react-quizlet-flashcard";
 import React from "react";
 
@@ -7,8 +8,11 @@ interface CardInfo {
     back: string;
 }
 
+interface CardsetProps {
+    info: CardInfo[];
+}
 // Adjust the function signature to use the CardInfo[] type for the info parameter
-function Cardset(info: CardInfo[]) {
+function Cardset({info}: CardsetProps) {
     const cards = [];
     for (let i = 0; i < info.length; i++) {
         const currInfo = {
